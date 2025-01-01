@@ -1,0 +1,48 @@
+//Html File
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,intial scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<Body>
+    <button id="mode">Change Mode</button>
+    <p>Toggling Background color using eventListeners.</p>
+    <script src="script.js"></script>
+    
+</Body>
+</html>
+
+//Style File
+
+.dark{
+    background-color: black;
+    color:white;
+}
+
+.white{
+    background-color: white;
+    color:black;
+}
+
+//JavaScript File
+
+let modebtn = document.querySelector("#mode");
+let body = document.querySelector("body");
+let currMode="light";
+
+modebtn.addEventListener("click",() => {
+    if(currMode==="light"){
+        currMode = "dark";
+        body.classList.add("dark");
+        body.classList.remove("light");
+    } else{
+        currMode = "light";
+        body.classList.add("light");
+        body.classList.remove("dark");
+    }
+
+    console.log(currMode);
+});
